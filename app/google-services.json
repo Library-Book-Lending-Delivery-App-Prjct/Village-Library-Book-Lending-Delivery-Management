@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "536176021849",
+    "project_id": "book-lending-delivery-app",
+    "storage_bucket": "book-lending-delivery-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536176021849:android:052fe25dd118b280627c48",
+        "android_client_info": {
+          "package_name": "com.example.booklendingdeliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536176021849-522ntavokjhf9b8r2amcqccunnphqpjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ0Y6nFl_p2vDptAVxMj9o8fTn9PpGJQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "536176021849-522ntavokjhf9b8r2amcqccunnphqpjb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
