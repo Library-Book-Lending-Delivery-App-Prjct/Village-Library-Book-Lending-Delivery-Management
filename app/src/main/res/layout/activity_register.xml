@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/ic_login_hero"/>
+                    android:src="@drawable/ic_login_hero" />
 
             </RelativeLayout>
 
@@ -65,7 +65,7 @@
                             style="@style/modifiedEditText"
                             android:hint="Name"
                             android:inputType="textPersonName"
-                            android:maxLines="1"/>
+                            android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -78,7 +78,7 @@
                             style="@style/modifiedEditText"
                             android:hint="@string/login_email_hint"
                             android:inputType="textEmailAddress"
-                            android:maxLines="1"/>
+                            android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -91,7 +91,7 @@
                             style="@style/modifiedEditText"
                             android:hint="Mobile Number"
                             android:inputType="phone"
-                            android:maxLines="1"/>
+                            android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +104,7 @@
                             style="@style/modifiedEditText"
                             android:hint="@string/login_password_hint"
                             android:inputType="textPassword"
-                            android:maxLines="1"/>
+                            android:maxLines="1" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
@@ -116,7 +116,8 @@
                         app:initialCornerAngle="27dp"
                         app:spinning_bar_color="#FFF"
                         app:spinning_bar_padding="6dp"
-                        app:spinning_bar_width="4dp"/>
+                        app:spinning_bar_width="4dp" />
+
                     <TextView
                         android:id="@+id/LoginBtn"
                         style="@style/parent"
@@ -126,7 +127,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/themeColor"
                         android:textSize="17sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -138,11 +139,12 @@
                 android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:weightSum="12">
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="3"
-                    android:background="@color/whiteTextColor"/>
+                    android:background="@color/whiteTextColor" />
 
                 <TextView
                     style="@style/viewParent.headerText.NoMode"
@@ -152,14 +154,15 @@
                     android:text="Use other Methods"
                     android:textAlignment="center"
                     android:textColor="@color/whiteTextColor"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="3"
-                    android:background="@color/whiteTextColor"/>
+                    android:background="@color/whiteTextColor" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -170,12 +173,13 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_facebook"/>
+                    android:src="@drawable/ic_facebook" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_google"/>
+                    android:src="@drawable/ic_google" />
             </LinearLayout>
         </LinearLayout>
 
