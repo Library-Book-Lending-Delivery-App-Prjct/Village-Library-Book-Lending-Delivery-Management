@@ -22,7 +22,8 @@
         android:theme="@style/Theme.BookLendingDeliveryApp">
         <activity
             android:name=".DashBoard"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false"

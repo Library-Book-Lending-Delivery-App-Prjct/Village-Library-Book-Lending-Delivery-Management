@@ -2,4 +2,23 @@
     <string name="app_name">Book Lending Delivery App</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
+    <string name="hello">Hi,</string>
+    <string name="joyal">Joyal</string>
+    <string name="search_books">Search Books....</string>
+    <string name="book_list">Books List</string>
+    <string name="book_returned">Books Returned</string>
+    <string name="book_cart">My Cart</string>
+    <string name="username">Username</string>
+    <string name="book_issued">Books Issued</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="isbn_scan">ISBN Scan</string>
+    <string name="cart">Cart</string>
+    <string name="account">Account</string>
+    <string name="favourites">FAVOURITES</string>
+    <string name="favourite_msg">Here, You were attached me as your favourite. when will you going to read us!...I\'m in a hurry to share new knowledge with you... </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_bookzone">welcome to BookZone</string>
+    <string name="favouritess">Favourites</string>
 </resources>

@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     EditText email, password;
-    TextView forgotpassword;
+    TextView forgotpassword,mRegisterBtn;
     Button Login;
     FirebaseAuth firebaseAuth;
 
@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         Login = findViewById(R.id.cirLoginButton);
         forgotpassword = findViewById(R.id.forgotpass);
+        mRegisterBtn = findViewById(R.id.RegisterBtn);
+
         FirebaseAuth.AuthStateListener authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -86,9 +88,17 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+            }
+        });
     }
     public void onLoginClick(View view){
-        startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+        Intent I = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(I);
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
     }
 }
