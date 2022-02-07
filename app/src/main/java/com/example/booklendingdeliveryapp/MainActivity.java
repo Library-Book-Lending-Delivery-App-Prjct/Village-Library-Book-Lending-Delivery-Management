@@ -22,19 +22,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.PREFS_NAME,0);
-                boolean hasLoggedIn = sharedPreferences.getBoolean("hasLoggedIn",false);
-
-                if (hasLoggedIn){
-                    Intent intent = new Intent(MainActivity.this,DashBoard.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else{
                     Intent i = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(i);
                     finish();
-                }
 
             }
         }, 3000);

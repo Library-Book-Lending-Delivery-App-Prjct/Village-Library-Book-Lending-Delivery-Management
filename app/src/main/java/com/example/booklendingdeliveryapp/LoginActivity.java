@@ -30,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     Button Login;
     FirebaseAuth firebaseAuth;
 
+    private FirebaseAuth.AuthStateListener authStateListener;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -45,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotpassword = findViewById(R.id.forgotpass);
         mRegisterBtn = findViewById(R.id.RegisterBtn);
 
-        FirebaseAuth.AuthStateListener authStateListener = new FirebaseAuth.AuthStateListener() {
+        authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -59,12 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
-
-        SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.PREFS_NAME,0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        editor.putBoolean("hasLoggedIn",true);
-        editor.commit();
 
         Login.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -111,5 +107,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent I = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(I);
         overridePendingTransition(R.anim.slide_in_right,R.anim.stay);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        firebaseAuth.addAuthStateListener(authStateListener);
     }
 }
