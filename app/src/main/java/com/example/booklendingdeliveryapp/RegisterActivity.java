@@ -19,12 +19,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText mFullname,mEmail,mPhone,mPassword;
+
+    //variables
+    EditText mFullname,mUsername,mEmail,mPhone,mPassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -35,7 +37,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         changeStatusBarColor();
 
-        mFullname = findViewById(R.id.editTextName);
+        mFullname = findViewById(R.id.editTextFullname);
+        mUsername = findViewById(R.id.editTextUserName);
         mEmail = findViewById(R.id.editTextEmail);
         mPhone = findViewById(R.id.editTextMobile);
         mPassword = findViewById(R.id.editTextPassword);
@@ -53,9 +56,12 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
                 String name = mFullname.getText().toString().trim();
+                String username = mUsername.getText().toString().trim();
                 String email = mEmail.getText().toString().trim();
-                String phone = mPhone.getText().toString().trim();
+                String phoneNo = mPhone.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
                 if (name.isEmpty()){
@@ -64,16 +70,22 @@ public class RegisterActivity extends AppCompatActivity {
                 }else if (name.matches(".*[0-9].*")){
                     mFullname.setError("Name does not contain a number");
                     mFullname.requestFocus();
+                }else if (username.isEmpty()){
+                    mUsername.setError("Username is required");
+                    mUsername.requestFocus();
+                }else if (username.length()>=15){
+                    mUsername.setError("Username too long");
+                    mUsername.requestFocus();
                 }else if (email.isEmpty()) {
                     mEmail.setError("Emailid is required!");
                     mEmail.requestFocus();
-                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     mEmail.setError("Enter a valid Emailid");
                     mEmail.requestFocus();
-                }else if(phone.isEmpty()){
+                }else if(phoneNo.isEmpty()){
                     mPhone.setError("Phone number is required!");
                     mPhone.requestFocus();
-                }else if (phone.length()!=10){
+                }else if (phoneNo.length()!=10){
                     mPhone.setError("Enter valid Phone number");
                     mPhone.requestFocus();
                 }else if (password.isEmpty()) {
@@ -84,23 +96,41 @@ public class RegisterActivity extends AppCompatActivity {
                     mPassword.requestFocus();
                 }
 
-                else if(name.isEmpty() && email.isEmpty() && phone.isEmpty() && password.isEmpty()){
+                else if(name.isEmpty() && username.isEmpty() && email.isEmpty() && phoneNo.isEmpty() && password.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Fields Empty!", Toast.LENGTH_SHORT).show();
                 }
-                else if (!(name.isEmpty() && email.isEmpty() && phone.isEmpty() && password.isEmpty())) {
+                else if (!(name.isEmpty() && username.isEmpty() && email.isEmpty() && phoneNo.isEmpty() && password.isEmpty())) {
+
+
                     // register the user in firebase
                     fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(RegisterActivity.this,"User Created.",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+
+                                //stored in realtime database
+                                UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password);
+
+                                FirebaseDatabase.getInstance().getReference("users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(helperClass).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()){
+                                            Toast.makeText(RegisterActivity.this,"User has been registered successfully! Now you have to log in!!!",Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                        }
+                                        else{
+                                            Toast.makeText(RegisterActivity.this,"Failed to register! Try again!!!",Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
                             }
                         }
                     });
-                    Toast.makeText(getApplicationContext(), "Registration Successfully", Toast.LENGTH_SHORT).show();
                 }
             }
+
         });
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

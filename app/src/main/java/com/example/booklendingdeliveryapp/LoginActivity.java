@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
+
+    public static String PREFS_NAME = "MyPrefsFile";
+
     EditText email, password;
     TextView forgotpassword,mRegisterBtn;
     Button Login;
@@ -34,11 +38,10 @@ public class LoginActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_login);
 
-
         firebaseAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
-        Login = findViewById(R.id.cirLoginButton);
+        Login = findViewById(R.id.cirLogoutButton);
         forgotpassword = findViewById(R.id.forgotpass);
         mRegisterBtn = findViewById(R.id.RegisterBtn);
 
@@ -56,6 +59,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
+
+        SharedPreferences sharedPreferences = getSharedPreferences(LoginActivity.PREFS_NAME,0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putBoolean("hasLoggedIn",true);
+        editor.commit();
+
         Login.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
 
@@ -76,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(getApplicationContext(), "Login Failed Invalid Username or Password", Toast.LENGTH_SHORT).show();
                             } else {
+
                                 Toast.makeText(getApplicationContext(), "Redirecting...!", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), DashBoard.class));
                                 finish();

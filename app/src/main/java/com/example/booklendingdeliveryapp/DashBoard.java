@@ -62,6 +62,9 @@ public class DashBoard extends AppCompatActivity {
                 //load fragment
                 loadFragment(fragment);
 
+
+
+
             }
         });
 
@@ -74,8 +77,35 @@ public class DashBoard extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 //display toast
-                Toast.makeText(getApplicationContext()
-                ,"You Clicked"+item.getId(),Toast.LENGTH_SHORT).show();
+                switch (item.getId()){
+
+                    case 1:
+                        //When id is 1
+                        Toast.makeText(getApplicationContext()
+                                ,"Home",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        //When id is 2
+                        Toast.makeText(getApplicationContext()
+                                ,"Favourites",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+                        //When id is 3
+                        Toast.makeText(getApplicationContext()
+                                ,"ISBN Scan",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+                        //When id is 4
+                        Toast.makeText(getApplicationContext()
+                                ,"Cart",Toast.LENGTH_SHORT).show();
+                        break;
+                    case 5:
+                        //When id is 5
+                        Toast.makeText(getApplicationContext()
+                                ,"Profile",Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
             }
         });
 
@@ -84,7 +114,7 @@ public class DashBoard extends AppCompatActivity {
             public void onReselectItem(MeowBottomNavigation.Model item) {
                 //display toast
                 Toast.makeText(getApplicationContext()
-                        ,"You Reselected"+item.getId(),Toast.LENGTH_SHORT).show();
+                        ,"You Reselected",Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/background_menu.xml" value="0.24027777777777778" />
+        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/button_background_blue.xml" value="0.24027777777777778" />
+        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/button_background_white.xml" value="0.24027777777777778" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/favourites_background.xml" value="0.24027777777777778" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/header_background.xml" value="0.2703125" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/drawable/ic_facebook.xml" value="0.2703125" />
@@ -16,10 +19,10 @@
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_account.xml" value="0.22592592592592592" />
+        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_cart.xml" value="0.22592592592592592" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_favourites.xml" value="0.21342592592592594" />
-        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_home.xml" value="0.22592592592592592" />
+        <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/fragment_i_s_b_n__scan.xml" value="0.22592592592592592" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/layout/header_background.xml" value="0.25416666666666665" />
         <entry key="..\:/MCA/Semester 3/Mini Project/Mini Project/Village-Library-Book-Lending-Delivery-Management/app/src/main/res/menu/navigation_menu.xml" value="0.22592592592592592" />
