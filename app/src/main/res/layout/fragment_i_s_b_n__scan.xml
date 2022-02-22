@@ -3,15 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ISBN_ScanFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="46sp"
-        android:textStyle="bold"
-        android:text="ISBN Scan" />
+        android:layout_height="match_parent">
+
+        <me.dm7.barcodescanner.zxing.ZXingScannerView
+            android:id="@+id/scannerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:maskColor="#3CC0E9EE"
+            app:squaredFinder="true"
+            app:borderAlpha="0.5"
+            app:cornerRadius="10dp"
+            app:shouldScaleToFill="true"
+            app:borderColor="@color/white"
+            app:laserColor="@color/white"
+            app:borderWidth="2dp"
+            app:roundedCorner="true">
+
+        </me.dm7.barcodescanner.zxing.ZXingScannerView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35sp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorAccent"
+                android:textAlignment="center"
+                android:text="SCAN"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
