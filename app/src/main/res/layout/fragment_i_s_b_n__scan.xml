@@ -5,49 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ISBN_ScanFragment">
-<<<<<<< Updated upstream
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <me.dm7.barcodescanner.zxing.ZXingScannerView
-            android:id="@+id/scannerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:maskColor="#3CC0E9EE"
-            app:squaredFinder="true"
-            app:borderAlpha="0.5"
-            app:cornerRadius="10dp"
-            app:shouldScaleToFill="true"
-            app:borderColor="@color/white"
-            app:laserColor="@color/white"
-            app:borderWidth="2dp"
-            app:roundedCorner="true">
-
-        </me.dm7.barcodescanner.zxing.ZXingScannerView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="16dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="35sp"
-                android:layout_gravity="center"
-                android:textColor="@color/colorAccent"
-                android:textAlignment="center"
-                android:text="SCAN"
-                android:textStyle="bold">
-
-            </TextView>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-=======
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -68,27 +26,25 @@
 
     </me.dm7.barcodescanner.zxing.ZXingScannerView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            android:textColor="@color/colorAccent"
-            android:textAlignment="center"
-            android:text="SCAN"
-            android:textStyle="bold">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/header_background"
+            android:padding="10dp"
+            app:layout_constraintTop_toTopOf="parent">
 
-        </TextView>
-
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:text="ISBN Scan"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
->>>>>>> Stashed changes
-
 </FrameLayout>

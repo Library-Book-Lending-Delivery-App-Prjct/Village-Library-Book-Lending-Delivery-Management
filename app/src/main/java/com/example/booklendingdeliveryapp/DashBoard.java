@@ -81,40 +81,21 @@ public class DashBoard extends AppCompatActivity {
 
                     case 1:
                         //When id is 1
-                        Toast.makeText(getApplicationContext()
-                                ,"Home",Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
                         //When id is 2
-                        Toast.makeText(getApplicationContext()
-                                ,"Favourites",Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
                         //When id is 3
-                        Toast.makeText(getApplicationContext()
-                                ,"ISBN Scan",Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
                         //When id is 4
-                        Toast.makeText(getApplicationContext()
-                                ,"Cart",Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
                         //When id is 5
-                        Toast.makeText(getApplicationContext()
-                                ,"Profile",Toast.LENGTH_SHORT).show();
                         break;
                 }
 
-            }
-        });
-
-        bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
-            @Override
-            public void onReselectItem(MeowBottomNavigation.Model item) {
-                //display toast
-                Toast.makeText(getApplicationContext()
-                        ,"You Reselected",Toast.LENGTH_SHORT).show();
             }
         });
 

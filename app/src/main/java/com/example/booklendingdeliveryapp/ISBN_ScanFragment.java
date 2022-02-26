@@ -5,24 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-<<<<<<< Updated upstream
 import androidx.fragment.app.Fragment;
-
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
 public class ISBN_ScanFragment extends Fragment implements ZXingScannerView.ResultHandler{
 
-=======
-import com.google.zxing.Result;
-
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
-public class ISBN_ScanFragment extends Fragment implements ZXingScannerView.ResultHandler{
-
->>>>>>> Stashed changes
     private ZXingScannerView scannerView;
 
     @Override
@@ -37,7 +25,6 @@ public class ISBN_ScanFragment extends Fragment implements ZXingScannerView.Resu
         scannerView.startCamera();
 
         return view;
-<<<<<<< Updated upstream
     }
 
     @Override
@@ -45,13 +32,6 @@ public class ISBN_ScanFragment extends Fragment implements ZXingScannerView.Resu
         Toast.makeText(getActivity(),rawResult.getText(),Toast.LENGTH_LONG).show();
     }
 
-=======
-    }
 
-    @Override
-    public void handleResult(Result rawResult) {
-        Toast.makeText(getActivity(),rawResult.getText(),Toast.LENGTH_LONG).show();
-    }
 
->>>>>>> Stashed changes
 }

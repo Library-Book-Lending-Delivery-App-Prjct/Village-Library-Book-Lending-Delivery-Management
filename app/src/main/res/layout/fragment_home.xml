@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="18dp"
-            android:hint="@string/username"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="22sp"
@@ -251,8 +250,9 @@
                 android:layout_marginTop="22dp"
                 android:background="@drawable/favourites_background"
                 android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/layoutBookReturned"
-                app:layout_constraintStart_toStartOf="@id/layoutBookList"
+                app:layout_constraintStart_toStartOf="@+id/layoutBookCart"
                 app:layout_constraintTop_toBottomOf="@id/layoutBookCart">
 
                 <TextView
