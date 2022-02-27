@@ -22,6 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookLendingDeliveryApp">
         <activity
+            android:name="com.example.booklendingdeliveryapp.RecyclerViewItemDisplay"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name="com.example.booklendingdeliveryapp.bookCart"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
