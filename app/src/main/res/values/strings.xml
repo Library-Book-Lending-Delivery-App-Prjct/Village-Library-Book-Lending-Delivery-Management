@@ -3,7 +3,8 @@
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="hello">Hi,</string>
-    <string name="joyal">Joyal</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
     <string name="search_books">Search Books....</string>
     <string name="book_list">Books List</string>
     <string name="book_returned">Books Returned</string>

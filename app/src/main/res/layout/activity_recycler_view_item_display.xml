@@ -6,7 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     app:contentPadding="5dp"
-    android:layout_marginTop="20dp"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="#81C5F8F6"
     app:cardElevation="3dp">
@@ -37,12 +36,23 @@
                 android:id="@+id/rImageView2"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_width="260dp"
-                android:layout_height="320dp"
+                android:layout_width="240dp"
+                android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center"
                 android:adjustViewBounds="false"
                 android:padding="2dp" />
+            <ImageView
+                android:id="@+id/FavouriteBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="-300dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_favorite_border"
+                app:tint="@color/colorAccent" />
 
         </LinearLayout>
         <LinearLayout
@@ -91,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="5dp"
+                android:paddingLeft="10dp"
                 android:paddingEnd="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -123,12 +133,6 @@
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingStart="@dimen/cardview_default_elevation">
-
-                <LinearLayout
                     android:id="@+id/isbn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -161,11 +165,43 @@
                         android:textSize="18sp" />
 
                 </LinearLayout>
-            </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/isbn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/PriceView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:textStyle="italic"
+                            android:text="Price :"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                        <TextView
+                            android:id="@+id/rPriceView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="10dp"
+                            android:textStyle="italic"
+                            android:text="Price"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
         </LinearLayout>
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-            android:id="@+id/addtocartButton"
+            android:id="@+id/addCartBtn"
             style="@style/loginButton"
             android:layout_width="142dp"
             android:layout_height="40dp"
@@ -177,7 +213,7 @@
             app:spinning_bar_color="#FFF" />
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
-            android:id="@+id/bookNowButton"
+            android:id="@+id/bookNowBtn"
             style="@style/loginButton"
             android:layout_width="142dp"
             android:layout_height="40dp"
